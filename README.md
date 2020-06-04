@@ -1,16 +1,19 @@
-# Airbnb API
+# Airbnp API
 
-REST & GraphQL API of the Airbnb Clone using Django REST Framework and Graphene GraphQL
+GraphQL API of the Airbnb Clone using Django Graphene GraphQL
 
 ### API Actions
 
-- [ ] List Rooms
-- [ ] Filter Rooms
-- [ ] Search By Coords
-- [ ] Login
-- [ ] Create Account
+Rooms
+
+- [ ] List Rooms (with Pagination)
 - [ ] See Room
 - [ ] Add Room to Favourites
+
+Users
+
+- [ ] Login (JWT)
+- [ ] Create Account
 - [ ] See Favs
 - [ ] See Profile
 - [ ] Edit Profile
