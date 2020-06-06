@@ -12,8 +12,9 @@ Rooms
 
 Users
 
+- [ ] See User
 - [ ] Login (JWT)
 - [ ] Create Account
 - [ ] See Favs
-- [ ] See Profile
+- [ ] See My Profile
 - [ ] Edit Profile
