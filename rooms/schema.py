@@ -3,6 +3,7 @@ from . import types, queries, mutations
 
 
 class Query(object):
+
     get_room_list = graphene.Field(
         types.GetRoomListResponse,
         resolver=queries.resolve_get_room_list,
@@ -17,4 +18,5 @@ class Query(object):
 
 
 class Mutation(object):
-    edit_profile = mutations.EditProfile.Field(required=True)
+    
+    pass

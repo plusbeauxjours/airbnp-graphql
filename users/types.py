@@ -4,7 +4,15 @@ from . import models
 
 
 class UserType(DjangoObjectType):
-
     class Meta:
         model = models.User
         exclude = ("password", "is_superuser", "last_login")
+
+
+class GetUserResponse(graphene.ObjectType):
+    user = graphene.Field(UserType)
+
+
+class CreateAccountResponse(graphene.ObjectType):
+    ok = graphene.Boolean()
+    error = graphene.String()
