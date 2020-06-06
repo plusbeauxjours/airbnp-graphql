@@ -1,3 +1,4 @@
+import uuid
 import random
 from datetime import datetime
 from django.core.management.base import BaseCommand
@@ -12,7 +13,11 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         user_seeder = Seed.seeder()
-        user_seeder.add_entity(User, 20, {"is_staff": False, "is_superuser": False})
+        user_seeder.add_entity(
+            User,
+            20,
+            {"uuid": lambda x: uuid.uuid4(), "is_staff": False, "is_superuser": False},
+        )
         user_seeder.execute()
 
         users = User.objects.all()
@@ -21,6 +26,7 @@ class Command(BaseCommand):
             Room,
             150,
             {
+                "uuid": lambda x: uuid.uuid4(),
                 "user": lambda x: random.choice(users),
                 "name": lambda x: room_seeder.faker.street_address(),
                 "price": lambda x: random.randint(0, 300),

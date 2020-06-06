@@ -1,10 +1,18 @@
 import graphene
 from graphene_django import DjangoObjectType
-from .models import Room
-from users.types import UserType
+from . import models
 
 
 class RoomType(DjangoObjectType):
-    class Meta:
-        model = Room
 
+    class Meta:
+        model = models.Room
+
+
+class GetRoomListResponse(graphene.ObjectType):
+    rooms = graphene.List(RoomType)
+    total = graphene.Int()
+
+
+class GetRoomDetailResponse(graphene.ObjectType):
+    room = graphene.Field(RoomType)

@@ -13,6 +13,9 @@ pillow = "*"
 django-seed = "*"
 faker = "==2.0.5"
 graphene-django = "*"
+graphql-jwt = "*"
+install = "*"
+graphql-core = "*"
 
 [requires]
 python_version = "3.7"

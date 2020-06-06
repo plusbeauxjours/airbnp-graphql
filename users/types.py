@@ -1,9 +1,10 @@
 import graphene
 from graphene_django import DjangoObjectType
-from .models import User
-from rooms.types import RoomType
+from . import models
 
 
 class UserType(DjangoObjectType):
+
     class Meta:
-        model = User
+        model = models.User
+        exclude = ("password", "is_superuser", "last_login")

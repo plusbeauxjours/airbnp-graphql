@@ -1,14 +1,20 @@
 import graphene
-from users import schema as user_schema
-from rooms import schema as room_schema
+from . import types, queries, mutations
 
 
-class Query(user_schema.Query, room_schema.Query):
-    pass
+class Query(object):
+    get_room_list = graphene.Field(
+        types.GetRoomListResponse,
+        resolver=queries.resolve_get_room_list,
+        required=True,
+    )
+    get_room_detail = graphene.Field(
+        types.GetRoomDetailResponse,
+        resolver=queries.resolve_get_room_detail,
+        required=True,
+        args={"uuid": graphene.String(required=True)},
+    )
 
 
-class Mutation(user_schema.Mutation, room_schema.Mutation):
-    pass
-
-
-schema = graphene.Schema(query=Query, mutation=Mutation)
+class Mutation(object):
+    edit_profile = mutations.EditProfile.Field(required=True)
