@@ -1,4 +1,5 @@
 import graphene
+import graphql_jwt
 from . import types, queries, mutations
 
 
@@ -15,3 +16,4 @@ class Query(object):
 class Mutation(object):
 
     create_account = mutations.CreateAccountMutation.Field(required=True)
+    log_in = graphql_jwt.ObtainJSONWebToken.Field(required=True)

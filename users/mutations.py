@@ -1,4 +1,5 @@
 import graphene
+
 from . import models, types
 
 

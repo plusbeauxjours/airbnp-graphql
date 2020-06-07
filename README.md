@@ -13,8 +13,8 @@ Rooms
 Users
 
 - [x] See User
-- [ ] Login (JWT)
-- [ ] Create Account
+- [x] Login (JWT)
+- [x] Create Account
 - [ ] See Favs
 - [ ] See My Profile
 - [ ] Edit Profile
