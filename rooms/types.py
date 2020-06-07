@@ -4,7 +4,6 @@ from . import models
 
 
 class RoomType(DjangoObjectType):
-
     class Meta:
         model = models.Room
 

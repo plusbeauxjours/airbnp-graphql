@@ -8,7 +8,7 @@ Rooms
 
 - [x] List Rooms (with Pagination)
 - [x] See Room
-- [ ] Add Room to Favourites
+- [x] Add Room to Favourites
 
 Users
 

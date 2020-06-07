@@ -18,5 +18,5 @@ class Query(object):
 
 
 class Mutation(object):
-    
+
     pass

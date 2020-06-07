@@ -20,3 +20,7 @@ class CreateAccountResponse(graphene.ObjectType):
 
 class MeResponse(graphene.ObjectType):
     user = graphene.Field(UserType)
+
+
+class ToggleFavsResponse(graphene.ObjectType):
+    ok = graphene.Boolean()

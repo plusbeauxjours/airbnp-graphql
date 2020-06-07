@@ -16,3 +16,4 @@ class Query(object):
 class Mutation(object):
 
     create_account = mutations.CreateAccountMutation.Field(required=True)
+    toggle_favs = mutations.ToggleFavsMutation.Field(required=True)
