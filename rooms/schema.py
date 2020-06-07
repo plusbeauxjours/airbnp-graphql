@@ -19,4 +19,5 @@ class Query(object):
 
 class Mutation(object):
 
-    pass
+    create_room = mutations.CreateRoomMutation.Field(required=True)
+    edit_room = mutations.EditRoomMutation.Field(required=True)

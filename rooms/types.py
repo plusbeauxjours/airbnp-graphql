@@ -24,3 +24,13 @@ class GetRoomListResponse(graphene.ObjectType):
 
 class GetRoomDetailResponse(graphene.ObjectType):
     room = graphene.Field(RoomType)
+
+
+class CreateRoomResponse(graphene.ObjectType):
+    room = graphene.Field(RoomType)
+
+
+class EditRoomResponse(graphene.ObjectType):
+    room = graphene.Field(RoomType)
+    error = graphene.String()
+
