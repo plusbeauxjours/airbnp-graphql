@@ -16,5 +16,5 @@ Users
 - [x] Login (JWT)
 - [x] Create Account
 - [ ] See Favs
-- [ ] See My Profile
+- [x] See My Profile
 - [ ] Edit Profile

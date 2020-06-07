@@ -13,10 +13,7 @@ pillow = "*"
 django-seed = "*"
 faker = "==2.0.5"
 graphene-django = "==2.9.1"
-graphql-core = "==2.2.1"
-graphql-relay = "==2.0.0"
-django-graphql-extensions = "==0.0.6"
-django-graphql-jwt = "==0.2.2"
+django-graphql-jwt = "*"
 
 [requires]
 python_version = "3.7"

@@ -1,5 +1,4 @@
 import graphene
-import graphql_jwt
 from . import types, queries, mutations
 
 
@@ -11,9 +10,9 @@ class Query(object):
         required=True,
         args={"uuid": graphene.String(required=True)},
     )
+    me = graphene.Field(types.MeResponse, resolver=queries.resolve_me, required=True,)
 
 
 class Mutation(object):
 
     create_account = mutations.CreateAccountMutation.Field(required=True)
-    log_in = graphql_jwt.ObtainJSONWebToken.Field(required=True)

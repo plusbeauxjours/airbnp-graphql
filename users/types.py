@@ -16,3 +16,7 @@ class GetUserResponse(graphene.ObjectType):
 class CreateAccountResponse(graphene.ObjectType):
     ok = graphene.Boolean()
     error = graphene.String()
+
+
+class MeResponse(graphene.ObjectType):
+    user = graphene.Field(UserType)
