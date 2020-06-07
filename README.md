@@ -17,4 +17,4 @@ Users
 - [x] Create Account
 - [ ] See Favs
 - [x] See My Profile
-- [ ] Edit Profile
+- [x] Edit Profile

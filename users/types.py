@@ -24,3 +24,7 @@ class MeResponse(graphene.ObjectType):
 
 class ToggleFavsResponse(graphene.ObjectType):
     ok = graphene.Boolean()
+
+
+class EditProfileResponse(graphene.ObjectType):
+    user = graphene.Field(UserType)

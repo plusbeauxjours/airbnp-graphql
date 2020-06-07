@@ -56,3 +56,39 @@ class ToggleFavsMutation(graphene.Mutation):
 
         except room_models.Room.DoesNotExist:
             return types.ToggleFavsResponse(ok=False)
+
+
+class EditProfileMutation(graphene.Mutation):
+    class Arguments:
+        first_name = graphene.String()
+        last_name = graphene.String()
+        email = graphene.String()
+        password = graphene.String()
+
+    Output = types.EditProfileResponse
+
+    @login_required
+    def mutate(self, info, **kwargs):
+
+        user = info.context.user
+        first_name = kwargs.get("first_name", None)
+        last_name = kwargs.get("last_name", None)
+        email = kwargs.get("email", None)
+        password = kwargs.get("password", None)
+
+        if first_name:
+            user.first_name = first_name
+        if last_name:
+            user.last_name = last_name
+        if email and email != user.email:
+            try:
+                models.User.objects.get(email=email)
+                return types.EditProfileResponse(user=None)
+
+            except models.User.DoesNotExist:
+                user.email = email
+        if password:
+            user.set_password(password)
+
+        user.save()
+        return types.EditProfileResponse(user=user)
